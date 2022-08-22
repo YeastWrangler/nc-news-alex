@@ -8,8 +8,9 @@ const ArticleCard = ({article}) => {
             <p>Author: {article.author}</p>
             <p> {article.body}</p>
             <p>Votes: {article.votes}    <br></br>Comments: {article.comment_count} </p>
-            <button className="article-button">Up Vote</button>
+            <button className="article-button"> bUp Vote</button>
             <button className="article-button"> Add Comment</button>
+            <button className="article-button"> View Comments</button>
 
         </div>
     )
