@@ -4,7 +4,7 @@ import {useEffect, useState} from "react"
 import Articles from "./Articles"
 import {useParams, Link} from "react-router-dom"
 
-const Topics = ({topic, setTopic}) => {
+const Topics = () => {
 
    const paramTopic =useParams()
    
@@ -20,7 +20,7 @@ const Topics = ({topic, setTopic}) => {
         <div>
         <label htmlFor="topics">Filter By Topics: </label>
             {topicList.map(({slug}) => {
-                const link = `/articles/${slug}`
+                const link = `/topics/${slug}`
        return  <Link to={link} key={slug}><button className="button-29" role="button" value={slug} name="topics" > {slug.charAt(0).toUpperCase() + slug.slice(1)}
         </button> </Link>
             })}

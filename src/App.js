@@ -3,14 +3,13 @@ import './App.css';
 import Topics from "./components/Topics"
 import HomePage from "./components/Homepage"
 import {useState} from "react"
-import {BrowserRouter, Link, Route, Routes, useParams} from "react-router-dom"
+import {BrowserRouter, Link, Route, Routes} from "react-router-dom"
 
 
 	
 
 function App() {
 
-const [topic, setTopic] = useState("")
 
   return (
     <BrowserRouter>
@@ -20,8 +19,8 @@ const [topic, setTopic] = useState("")
       </header>
       </div>
       <Routes>
-        <Route path="/" element={<Topics topic={topic} setTopic={setTopic}/>}/>
-        <Route path="/articles/:topic" element={<Topics topic={topic} setTopic={setTopic}/>} />
+        <Route path="/" element={<Topics />}/>
+        <Route path="/topics/:topic" element={<Topics />} />
      
       </Routes>
     
