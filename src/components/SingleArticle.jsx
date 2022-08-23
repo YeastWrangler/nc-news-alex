@@ -24,12 +24,12 @@ useEffect(() => {
 },[article.votes])
 
 
-console.log(article)
+
 
 const upVote = (event) => {
     setVoteCount((currCount) => currCount + 1)
     return patchArticleVote(event.target.value).then(() => {
-     console.log("event", event.target.value)
+   
 }).catch((err) => {
     setVoteError(<p className="error-message">*Vote was not counted, please refresh and try again!*</p>)
 })
