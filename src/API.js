@@ -8,6 +8,13 @@ export const getArticles = () => {
 
 }
 
+export const getArticleByArticleID = (article_id) => {
+    return axios.get(`https://alex-news-app-project-nc.herokuapp.com/api/articles/${article_id}`).then((data) => {
+     
+        return data
+    })
+}
+
 export const getArticlesByTopic = (topic) => {
     return axios.get(`https://alex-news-app-project-nc.herokuapp.com/api/articles?topic=${topic}`).then((data) => {
         return data

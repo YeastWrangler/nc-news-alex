@@ -1,9 +1,8 @@
 
 import './App.css';
 import Topics from "./components/Topics"
-import HomePage from "./components/Homepage"
-import {useState} from "react"
 import {BrowserRouter, Link, Route, Routes} from "react-router-dom"
+import SingleArticle from './components/SingleArticle';
 
 
 	
@@ -21,6 +20,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Topics />}/>
         <Route path="/topics/:topic" element={<Topics />} />
+        <Route path="/articles/:article_id" element={<SingleArticle />}/>
      
       </Routes>
     

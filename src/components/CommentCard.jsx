@@ -18,7 +18,7 @@ const [comments, setComments] = useState([])
         const clickHandler = () => setExpanded(!expanded);
       
         return (
-          <ul className="collapsible" onClick={clickHandler}> Click to View Comments <span> 👀 </span>
+          <ul className="collapsible" onClick={clickHandler}> Click to View Comments
             {comments.map((comment) => {
                 return <li  className={expanded ? 'expanded' : 'collapsed'} key={comment.comment_id}>
                     <h4>Author: {comment.author}</h4>
@@ -27,7 +27,8 @@ const [comments, setComments] = useState([])
                 </li>
             })}</ul>)
         
-    
+      
+
         }
 
 export default CommentCard
