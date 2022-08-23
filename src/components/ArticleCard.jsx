@@ -1,6 +1,6 @@
 import React from 'react'
 import {patchArticleVote} from "../API"
-import {useState, useEffect} from "react"
+import {useState} from "react"
 import CommentCard from "./CommentCard"
 
 const ArticleCard = ({article}) => {
@@ -8,23 +8,19 @@ const ArticleCard = ({article}) => {
     const [voteCount, setVoteCount] = useState(article.votes);
     const [voteError, setVoteError] = useState("")
 
-    
-    useEffect(() => {
-        setVoteCount(voteCount)
-    }, [voteCount])
 
     const upVote = (event) => {
+        setVoteCount((currCount) => currCount + 1)
         return patchArticleVote(event.target.value).then(() => {
-         setVoteCount((currCount) => currCount + 1)
          
     }).catch((err) => {
         setVoteError(<p className="error-message">*Vote was not counted, please refresh and try again!*</p>)
     })
 }
     const downVote = (event) => {
+        setVoteCount((currCount) => currCount - 1)
         return patchArticleVote(event.target.value, -1).then(() => {
-            setVoteCount((currCount) => currCount - 1)
-            
+
     }).catch((err) => {
        setVoteError(<p className="error-message">*Vote was not counted, please refresh and try again!*</p>)
     })
