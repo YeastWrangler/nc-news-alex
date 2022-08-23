@@ -26,3 +26,9 @@ export const patchArticleVote = (article_id, number=1) => {
 
     })
 }
+
+export const getCommentsByArticleID = (article_id) => {
+    return axios.get(`https://alex-news-app-project-nc.herokuapp.com/api/articles/${article_id}/comments`).then((data)=> {
+        return data
+    })
+}

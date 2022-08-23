@@ -18,7 +18,7 @@ const Topics = () => {
 
     return (
         <div>
-        <label htmlFor="topics">Filter By Topics: </label>
+        <label className="topic-title" htmlFor="topics">Filter By Topics: </label>
             {topicList.map(({slug}) => {
                 const link = `/topics/${slug}`
        return  <Link to={link} key={slug}><button className="button-29" role="button" value={slug} name="topics" > {slug.charAt(0).toUpperCase() + slug.slice(1)}

@@ -1,6 +1,7 @@
 import React from 'react'
 import {patchArticleVote} from "../API"
 import {useState, useEffect} from "react"
+import CommentCard from "./CommentCard"
 
 const ArticleCard = ({article}) => {
 
@@ -40,8 +41,9 @@ const ArticleCard = ({article}) => {
         <p> <button onClick={upVote} value={article.article_id} className="article-button"> Up Vote <span> 👍 </span> </button>
             <button onClick={downVote} value={article.article_id} className="article-button"> Down Vote <span> 👎 </span></button>
             <button className="article-button"> Add Comment <span> 📣 </span></button>
-            <button className="article-button"> View Comments <span> 👀 </span></button>
+         
             </p>
+            <CommentCard article_id={article.article_id}/>
    </>)
 }
 
