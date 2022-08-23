@@ -42,23 +42,49 @@
 
 .article-card {
   border-style: outset;
+  display: inline-block;
 	position : relative;
-	height: 450px;
-	width: 900px;
-	margin : 200px auto;
-	background-color : #FFF;
+  width:fit-content;
+  height:fit-content;
+	
+	margin : 20px auto;
+	background-color : rgb(190, 225, 241);
 	-webkit-box-shadow: 10px 10px 93px 0px rgba(0,0,0,0.75);
 	-moz-box-shadow: 10px 10px 93px 0px rgba(0,0,0,0.75);
 	box-shadow: 10px 10px 93px 0px rgba(0,0,0,0.75);
+}
+
+.article-body {
+  
 }
 
 .article-card p {
   padding: 20px
 }
 
-.article-card button {
-  font-size: medium;
+.article-button {
+  font-size: large;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+  cursor: pointer;
+  
 
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
+}
+
+.article-button:hover 
+{background-color: #3dd6f1;
+  }
+
+.article-button:active {
+  background-color: green;
+    box-shadow: 0 5px #666;
+  transform: translateY(4px);
+  
 }
 
 /*<!-- HTML !-->

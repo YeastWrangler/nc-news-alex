@@ -19,3 +19,10 @@ export const getTopics = () => {
         return data
     })
 }
+
+export const patchArticleVote = (article_id, number=1) => {
+    return axios.patch(`https://alex-news-app-project-nc.herokuapp.com/api/articles/${article_id}`, {inc_votes: number}).then((data) => {
+        return data
+
+    })
+}
