@@ -28,7 +28,7 @@ const Articles = () => {
         <div>
             <ul>
             {articleList.map((article) => {
-                return <li key={article.article_id}>
+                return <li className="article-list"key={article.article_id}>
                     <ArticleCard article={article}/>
                 </li>
             })}
