@@ -39,3 +39,13 @@ export const getCommentsByArticleID = (article_id) => {
         return data
     })
 }
+
+export const postCommentByArticleID = (article_id, commentObj) => {
+  
+    return axios.post(`https://alex-news-app-project-nc.herokuapp.com/api/articles/${article_id}/comments`, commentObj).then((res) => {
+        return res
+    })
+   
+    
+}
+

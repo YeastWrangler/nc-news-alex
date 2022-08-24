@@ -15,14 +15,15 @@
 
 .App-header {
 
+    color: white;
     background-color: #6e7788;
     min-height: 20vh;
     display: flex;
+    margin-bottom: 25px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+    font-size: calc(25px + 2vmin);
   
 }
 
@@ -39,20 +40,53 @@
     transform: rotate(360deg);
   }
 }
+input[type="text"]
+{
+    font-size:18px;
+    width: 700px;
+    height: 40px;
+    margin: 20px;
+   
+    position: relative;
+}
+
+.comment-box{
+  height: 30px;
+  width: 200px;
+  margin: 20px;
+ 
+  position: relative;
+}
+
+form {
+  
+  width: 550px;
+  height: 450px;
+  margin: auto;
+  position: relative;
+ }
+
+
 
 .topic-title {
   padding-left: 50px;
   font-weight: bolder;
+  font-size:25px;
+}
+
+.article-list {
+  list-style: none;
 }
 
 .article-card {
   border-style: outset;
   display: inline-block;
 	position : relative;
-  width:fit-content;
+  width:auto;
   height:fit-content;
-	
+  border-radius: 15px;
 	margin : 20px auto;
+  margin-right: 30px;
 	background-color : rgb(190, 225, 241);
 	-webkit-box-shadow: 10px 10px 93px 0px rgba(0,0,0,0.75);
 	-moz-box-shadow: 10px 10px 93px 0px rgba(0,0,0,0.75);
@@ -66,6 +100,15 @@
 .article-card p {
   padding: 20px;
   padding-right: 150px;
+  font-weight: 600;
+  color: black;
+}
+
+.article-card h3 {
+  display: grid;
+  place-content: center;
+  color: black;
+
 }
 
 .article-button {
@@ -73,8 +116,6 @@
   border-radius: 15px;
   box-shadow: 0 9px #999;
   cursor: pointer;
-  
-
 }
 
 .error-message {
@@ -167,6 +208,7 @@
   white-space: nowrap;
   will-change: box-shadow,transform;
   font-size: 22px;
+  margin-left:80px;
 }
 
 .button-29:focus {

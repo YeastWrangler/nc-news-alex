@@ -34,10 +34,10 @@ const ArticleCard = ({article}) => {
             <p className="article-body"> {article.body}</p>
             <p>Votes: {voteCount}  {voteError}  <br></br>Comments: {article.comment_count} </p>
         </div>
-            </Link>)
+            </Link>
         <p> <button onClick={upVote} value={article.article_id} className="article-button"> Up Vote <span> 👍 </span> </button>
             <button onClick={downVote} value={article.article_id} className="article-button"> Down Vote <span> 👎 </span></button>
-            <button className="article-button"> Add Comment <span> 📣 </span></button>
+           
          
             </p>
            
