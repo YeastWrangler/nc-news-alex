@@ -31,6 +31,12 @@
   color: #cfd7da;
 }
 
+.for-404 {
+  font-size: 50px;
+
+  margin:auto
+}
+
 
 @keyframes App-logo-spin {
   from {
@@ -130,6 +136,16 @@ form {
 #error-message {
   color: red;
   font-weight: bold;
+}
+
+.error-message-topic {
+  color: red;
+  justify-content: center;
+  margin:auto;
+  font-size: 100px;
+  padding-top: 20px;
+  padding-left:10%;
+  padding-right: 10%
 }
 
 .article-button:hover 

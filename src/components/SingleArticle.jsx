@@ -11,10 +11,13 @@ const SingleArticle = () => {
 const {article_id} = useParams()
 
 const [article, setArticle] = useState({})
+const [articleIDError, setArticleIDError] = useState("")
 
 useEffect(() => {
     getArticleByArticleID(article_id).then((data) => {
         setArticle(data.data.article)
+    }).catch((err) => {
+            setArticleIDError(err.response.data.msg)
     })
 }, [article_id, article.comment_count])
 
@@ -22,6 +25,7 @@ const {currentUser, setCurrentUser} = useContext(UserContext)
 const [voteCount, setVoteCount] = useState(article.votes);
 const [voteError, setVoteError] = useState("")
 const [commentError, setCommentError] = useState("")
+
 
 useEffect(() => {
     setVoteCount(article.votes)
@@ -50,6 +54,7 @@ const downVote = (event) => {
 
     return (<>
         <p>Currently logged in as: {currentUser.username} </p>
+        <p className="error-message-topic">{articleIDError}</p>
         <div className="article-card">
         <h3>ID# {article.article_id} - {article.title}</h3>
         <p>Topic: {article.topic}</p>

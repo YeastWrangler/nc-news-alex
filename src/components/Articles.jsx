@@ -8,6 +8,7 @@ import ArticleCard from './ArticleCard'
 const Articles = ({topic, sortQuery, setSortQuery, toggle}) => {
     
     const [articleList, setArticleList] = useState([])
+    const [topicError, setTopicError] = useState("")
     
 
    
@@ -16,6 +17,9 @@ const Articles = ({topic, sortQuery, setSortQuery, toggle}) => {
         if(sortQuery || topic.topic){
             getArticlesSortedByTopic(topic.topic, sortQuery, toggle).then((data) => {
                     setArticleList(data.data.articles)
+                }).catch((err) => {
+                    setTopicError(err.response.data.msg)
+                   
                 })
                 setSortQuery(undefined)
         }
@@ -24,11 +28,12 @@ const Articles = ({topic, sortQuery, setSortQuery, toggle}) => {
             setArticleList(data.data.articles)
         })
         }
-    }, [topic.topic, sortQuery, toggle])
+    }, [topic.topic, sortQuery, toggle, topicError])
  
 
     return (
         <div>
+            <p className="error-message-topic" >{topicError}</p>
             <ul>
             {articleList.map((article) => {
                 return <li className="article-list"key={article.article_id}>

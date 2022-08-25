@@ -11,12 +11,11 @@ const PostComment = () => {
     
     const {currentUser, setCurrentUser} = useContext(UserContext)
     const {article_id} = useParams()
-    const [commentBody, setCommentBody] = useState({username: currentUser.username, body: "test script"})
+    const [commentBody, setCommentBody] = useState()
     const [article, setArticle] = useState({})
     const [userFeedback, setUserFeedback] = useState("")
     const [newCount, setNewCount] = useState(0)
     const [inputValue, setInputValue] = useState("")
-   
     
     useEffect(() => {
         getArticleByArticleID(article_id).then((data) => {
@@ -33,6 +32,11 @@ const PostComment = () => {
      const handleSubmit = (event) => {
          event.preventDefault()
 
+         if(commentBody === undefined) {
+            
+             setUserFeedback(<p>*Comment field is blank, please type a comment before submitting</p>)
+         } else {
+
         postCommentByArticleID(article_id, commentBody).then((data) => {
             setUserFeedback(<p >*Your Comment has been posted!*</p>)
             setInputValue("")
@@ -43,7 +47,7 @@ const PostComment = () => {
         }).catch((err) => {
             setUserFeedback(<p className="error-message" >*Comment was not submitted, please refresh and try again!*</p>)
         })
-     }
+     }}
 
 
     return (<>
