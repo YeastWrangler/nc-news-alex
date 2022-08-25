@@ -16,6 +16,7 @@ const PostComment = () => {
     const [userFeedback, setUserFeedback] = useState("")
     const [newCount, setNewCount] = useState(0)
     const [inputValue, setInputValue] = useState("")
+   
     
     useEffect(() => {
         getArticleByArticleID(article_id).then((data) => {
@@ -40,12 +41,13 @@ const PostComment = () => {
                 })
             
         }).catch((err) => {
-            setUserFeedback(<p className="error-message">*Comment was not submitted, please refresh and try again!*</p>)
+            setUserFeedback(<p className="error-message" >*Comment was not submitted, please refresh and try again!*</p>)
         })
      }
 
 
     return (<>
+    <p>Currently logged in as: {currentUser.username} </p>
         <div className="article-card">
             <h3>ID# {article.article_id} - {article.title}</h3>
             <p>Topic: {article.topic}</p>

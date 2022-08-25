@@ -127,6 +127,11 @@ form {
   font-weight: bold;
 }
 
+#error-message {
+  color: red;
+  font-weight: bold;
+}
+
 .article-button:hover 
 {background-color: #3dd6f1;
   }

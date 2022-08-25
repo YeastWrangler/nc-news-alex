@@ -59,7 +59,11 @@ export const postCommentByArticleID = (article_id, commentObj) => {
     return axios.post(`https://alex-news-app-project-nc.herokuapp.com/api/articles/${article_id}/comments`, commentObj).then((res) => {
         return res
     })
-   
-    
+}
+
+export const deleteCommentAPI = (comment_id) => {
+    return axios.delete(`https://alex-news-app-project-nc.herokuapp.com/api/comments/${comment_id}`).then((data) => {
+        return data
+    })
 }
 
