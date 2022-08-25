@@ -1,11 +1,13 @@
 
 import './App.css';
 import Topics from "./components/Topics"
-import {BrowserRouter, Link, Route, Routes} from "react-router-dom"
+import Sort from "./components/Sort"
+import {BrowserRouter, Link, Route, Routes, useParams} from "react-router-dom"
 import SingleArticle from './components/SingleArticle';
 import PostComment from './components/PostComment';
 import { UserContext } from './context/user';
 import {useState} from "react"
+import Homepage from './components/Homepage';
  
 
 	
@@ -24,10 +26,11 @@ const [currentUser, setCurrentUser] = useState({username: "jessjelly"})
 
       <UserContext.Provider value={{currentUser, setCurrentUser}}>
       <Routes>
-        <Route path="/" element={<Topics />}/>
+        <Route path="/" element={<Homepage />} />
         <Route path="/topics/:topic" element={<Topics />} />
         <Route path="/articles/:article_id" element={<SingleArticle />}/>
         <Route path="/comments/:article_id" element={<PostComment />} />
+      
       </Routes>
       </UserContext.Provider>
     

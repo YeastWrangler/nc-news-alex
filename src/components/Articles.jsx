@@ -1,27 +1,30 @@
 import React from 'react'
-import { getArticles, getArticlesByTopic } from '../API'
+import { getArticles, getArticlesSortedByTopic } from '../API'
 import {useEffect, useState} from 'react'
 import ArticleCard from './ArticleCard'
-import { useParams } from 'react-router'
 
 
-const Articles = () => {
+
+const Articles = ({topic, sortQuery, setSortQuery, toggle}) => {
+    
     const [articleList, setArticleList] = useState([])
-    const {topic} = useParams()
+    
+
    
 
     useEffect(() => {
-        if(topic){
-        getArticlesByTopic(topic).then((data) => {
-            setArticleList(data.data.articles)
-        })
+        if(sortQuery || topic.topic){
+            getArticlesSortedByTopic(topic.topic, sortQuery, toggle).then((data) => {
+                    setArticleList(data.data.articles)
+                })
+                setSortQuery(undefined)
         }
         else {
         getArticles().then((data) => {
             setArticleList(data.data.articles)
         })
         }
-    }, [topic])
+    }, [topic.topic, sortQuery, toggle])
  
 
     return (

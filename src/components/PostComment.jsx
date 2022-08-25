@@ -25,7 +25,7 @@ const PostComment = () => {
 
     const handleChange = (event) => {
         setCommentBody({username: currentUser.username, body: event.target.value})
-        console.log(commentBody, "comment body")
+       
         setInputValue(event.target.value)
     }
 
