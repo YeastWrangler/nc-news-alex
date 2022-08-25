@@ -1,10 +1,11 @@
 import React from 'react'
+import Topics from "./Topics"
 
 
 const Homepage = () => {
     return (
         <div>
-            Home
+            <Topics />
         </div>
     )
 }
