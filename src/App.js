@@ -1,8 +1,7 @@
 
 import './App.css';
 import Topics from "./components/Topics"
-import Sort from "./components/Sort"
-import {BrowserRouter, Link, Route, Routes, useParams} from "react-router-dom"
+import {BrowserRouter, Link, Route, Routes} from "react-router-dom"
 import SingleArticle from './components/SingleArticle';
 import PostComment from './components/PostComment';
 import { UserContext } from './context/user';
