@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import {postCommentByArticleID, getArticleByArticleID} from "../API"
 import { UserContext } from '../context/user'
 import {useEffect, useState, useContext} from "react"
+import LoggedUser from './LoggedUser'
 
 
 
@@ -51,7 +52,7 @@ const PostComment = () => {
 
 
     return (<>
-    <p>Currently logged in as: {currentUser.username} </p>
+    <LoggedUser />
         <div className="article-card">
             <h3>ID# {article.article_id} - {article.title}</h3>
             <p>Topic: {article.topic}</p>

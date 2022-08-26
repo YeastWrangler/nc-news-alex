@@ -1,14 +1,15 @@
 import React from 'react'
 import {getTopics} from "../API"
-import {useEffect, useState, useContext} from "react"
+import {useEffect, useState} from "react"
 import Articles from "./Articles"
 import {useParams, Link} from "react-router-dom"
-import { UserContext } from '../context/user'
+
+import LoggedUser from "./LoggedUser"
 
 
 const Topics = () => {
 
-    const {currentUser} = useContext(UserContext)
+   
     const availableQueries = ["created_at", "comment_count", 'votes']
     const [sortQuery, setSortQuery] = useState()
     const [topicList, setTopicList] = useState([])
@@ -39,7 +40,7 @@ const Topics = () => {
                 }   
 
     return (<>
-    <p>Currently logged in as: {currentUser.username} </p>
+    <LoggedUser />
         <div >
         <label className="topic-title" htmlFor="topics">Filter By Topics: </label>
             {topicList.map(({slug}) => {

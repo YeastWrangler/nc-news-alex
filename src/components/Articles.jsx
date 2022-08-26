@@ -9,7 +9,7 @@ const Articles = ({topic, sortQuery, setSortQuery, toggle}) => {
     
     const [articleList, setArticleList] = useState([])
     const [topicError, setTopicError] = useState("")
-console.log("changes", topic.topic, sortQuery, toggle)
+
     useEffect(() => {
         if(sortQuery || topic.topic){
             getArticlesSortedByTopic(topic.topic, sortQuery, toggle).then((data) => {

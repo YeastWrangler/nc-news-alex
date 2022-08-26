@@ -1,8 +1,8 @@
-import React, {useState, useEffect, useContext}  from 'react'
+import React, {useState, useEffect}  from 'react'
 import { useParams, Link} from 'react-router-dom'
 import {getArticleByArticleID, patchArticleVote} from "../API"
 import CommentCard from "./CommentCard"
-import { UserContext } from '../context/user'
+import LoggedUser from './LoggedUser'
 
 
 
@@ -21,14 +21,12 @@ useEffect(() => {
     })
 }, [article_id, article.comment_count])
 
-const {currentUser} = useContext(UserContext)
+
 const [voteCount, setVoteCount] = useState(article.votes);
 const [voteError, setVoteError] = useState("")
 const [commentError] = useState("")
 
 const stringDate = new Date(article.created_at)
-
-console.log(article.created_at)
 
 useEffect(() => {
     setVoteCount(article.votes)
@@ -54,12 +52,12 @@ const downVote = (event) => {
 
 if(articleIDError) {
     return (<>
-        <p>Currently logged in as: {currentUser.username} </p>
+        <LoggedUser/>
         <p className="error-message-topic">{articleIDError}</p>
     </>)
 } else
     return (<>
-        <p>Currently logged in as: {currentUser.username} </p>
+        <LoggedUser/>
         <p className="error-message-topic">{articleIDError}</p>
         <div className="article-card">
         <h3>{article.title}</h3>
