@@ -18,9 +18,9 @@ const [currentUser, setCurrentUser] = useState({username: "jessjelly"})
 
   return (
     <BrowserRouter>
-    <div >
+    <div className="background-img">
       <header className="App-header">
-        <Link to="/">Alex's News APP</Link>
+        <Link className="home" to="/">Alex's News APP</Link>
       </header>
       </div>
 

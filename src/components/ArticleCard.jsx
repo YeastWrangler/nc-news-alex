@@ -30,7 +30,7 @@ const ArticleCard = ({article}) => {
     return (<> <Link to={`/articles/${article.article_id}`}>
 
         <div className="article-card">
-            <h3>ID# {article.article_id} - {article.title}</h3>
+            <h3>{article.title}</h3>
             <p>Date Posted: {stringDate.toGMTString()}</p>
             <p>Topic: {article.topic.charAt(0).toUpperCase() + article.topic.slice(1)}</p>
             <p>Author: {article.author}</p>
