@@ -40,7 +40,7 @@ const Topics = () => {
 
     return (<>
     <p>Currently logged in as: {currentUser.username} </p>
-        <div>
+        <div >
         <label className="topic-title" htmlFor="topics">Filter By Topics: </label>
             {topicList.map(({slug}) => {
                 const link = `/topics/${slug}`

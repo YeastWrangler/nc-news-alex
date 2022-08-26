@@ -29,7 +29,7 @@ console.log("changes", topic.topic, sortQuery, toggle)
  
 
     return (
-        <div>
+        <div className="whole-background">
             <p className="error-message-topic" >{topicError}</p>
             <ul>
             {articleList.map((article) => {
