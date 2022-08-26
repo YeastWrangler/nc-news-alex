@@ -9,19 +9,16 @@ const Articles = ({topic, sortQuery, setSortQuery, toggle}) => {
     
     const [articleList, setArticleList] = useState([])
     const [topicError, setTopicError] = useState("")
-    
-
-   
-
+console.log("changes", topic.topic, sortQuery, toggle)
     useEffect(() => {
         if(sortQuery || topic.topic){
             getArticlesSortedByTopic(topic.topic, sortQuery, toggle).then((data) => {
                     setArticleList(data.data.articles)
                 }).catch((err) => {
-                    setTopicError(err.response.data.msg)
-                   
+                    setTopicError("Topic Not Found")
                 })
-                setSortQuery(undefined)
+                //setSortQuery(undefined)
+             
         }
         else {
         getArticles().then((data) => {

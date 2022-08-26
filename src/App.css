@@ -10,6 +10,7 @@
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
+    min-width: 600px
   }
 }
 
@@ -86,17 +87,20 @@ form {
 
 .article-list {
   list-style: none;
+  width:90%
+  
 }
 
 .article-card {
   border-style: outset;
   display: inline-block;
 	position : relative;
-  width:auto;
+  width:90%;
   height:fit-content;
   border-radius: 15px;
 	margin : 20px auto;
   margin-right: 30px;
+  margin-left: 30px;
 	background-color : rgb(190, 225, 241);
 	-webkit-box-shadow: 10px 10px 93px 0px rgba(0,0,0,0.75);
 	-moz-box-shadow: 10px 10px 93px 0px rgba(0,0,0,0.75);
@@ -168,7 +172,8 @@ form {
   background-color: #777;
   color: white;
   cursor: pointer;
-  padding: 18px;
+  display: block;
+  padding: 12px 20px;
   width: 100%;
   border: none;
   text-align: left;
@@ -186,8 +191,35 @@ form {
   font-size: medium;
   float: left;
   margin-left: 5px;
-  padding-right: 150px;
+  padding-right: 15px;
 }
+
+.sketchy {
+  padding: 20px;
+  margin-left: 20px;
+  margin-right: 40px;
+  display: inline-block;
+  border: 3px solid #333333;
+  font-size: 1rem;
+  border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
+  width: 85%;
+  letter-spacing: 0.3ch;
+  background: #ffffff;
+  position: static;
+  color: #222;
+}
+  
+  .sketchy ::before {
+      color: black;
+      border: 2px solid #353535;
+      display: block;
+      width: 100%;
+      height: 100%;
+      top: 50%;
+      left: 50%;
+      border-radius: 1% 1% 2% 4% / 2% 6% 5% 4%;
+  }
+
 
 .active:after {
   content: "\2212";
@@ -202,7 +234,216 @@ form {
 }
 
 /*<!-- HTML !-->
-<button class="button-29" role="button">Button 29</button>
+<button class="button-29" role="button">Button 29</button> */
+
+
+
+
+/*// Reset and Layout Styles*/
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: #d6dee6;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+}
+body {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+}
+
+.btn {
+box-sizing: border-box;
+appearance: none;
+background-color: rgb(179, 223, 248);
+border-color:  rgb(83, 169, 219);
+border-radius: 0.6em;
+cursor: pointer;
+
+align-self: center;
+font-size: 1rem;
+font-weight: 400;
+line-height: 1;
+margin: 20px;
+padding: 1.2em 2.8em;
+text-decoration: none;
+text-align: center;
+
+font-family: 'Montserrat', sans-serif;
+font-weight: 700;
+}
+
+.btn:hover {
+  color:white;
+  outline: 0;
+  background-color: rgb(83, 169, 219);
+  box-shadow: 0 0 10px 0 rgb(20, 89, 129) inset, 0 0 10px 4px rgb(20, 89, 129);
+}
+.btn:focus {
+
+  outline: 0;
+  
+  
+  box-shadow: 0 0 10px 0 rgb(20, 89, 129) inset, 0 0 10px 4px rgb(20, 89, 129);
+}
+
+
+.third {
+  border-color: blue;
+  color:blue;
+  box-shadow: 0 0 40px 40px blue, 0 0 0 0 blue;
+  transition: all 150ms ease-in-out;
+  padding: 10px;
+}
+  
+  .third:hover {
+    box-shadow: 0 0 10px 0 blue inset, 0 0 10px 4px blue;
+  
+}
+		
+
+/*<!-- HTML !-->
+<button class="button-71" role="button">Button 71</button>*/
+
+/* CSS */
+.button-71 {
+  background-color: #0078d0;
+  border: 0;
+  border-radius: 56px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: system-ui,-apple-system,system-ui,"Segoe UI",Roboto,Ubuntu,"Helvetica Neue",sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  outline: 0;
+  margin:20px;
+
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-71:before {
+  background-color: initial;
+  background-image: linear-gradient(#fff 0, rgba(255, 255, 255, 0) 100%);
+  border-radius: 125px;
+  content: "";
+  height: 50%;
+  left: 4%;
+  opacity: .5;
+  position: absolute;
+  top: 0;
+  transition: all .3s;
+  width: 92%;
+}
+
+.button-71:hover {
+  box-shadow: rgba(255, 255, 255, .2) 0 3px 15px inset, rgba(0, 0, 0, .1) 0 3px 5px, rgba(0, 0, 0, .1) 0 10px 13px;
+  transform: scale(1.05);
+  
+}
+
+.button-71:focus {
+  color: black;
+  outline: 5;
+  box-shadow: 0 0 10px 0 rgb(20, 89, 129) inset, 0 0 10px 4px rgb(20, 89, 129);
+}
+
+.button-71:active {
+  top: 2px;
+  left: 1px;
+  color: red;
+  box-shadow: none;
+  
+}
+
+@media (min-width: 768px) {
+  .button-71 {
+    padding: 16px 48px;
+  }
+}
+
+/* topic buttons */
+<!-- HTML !-->
+<button class="button-85" role="button">Button 85</button>
+
+/* CSS */
+.button-85 {
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-85:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.button-85:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
 
 /* CSS */
 .button-29 {

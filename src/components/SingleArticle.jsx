@@ -21,17 +21,18 @@ useEffect(() => {
     })
 }, [article_id, article.comment_count])
 
-const {currentUser, setCurrentUser} = useContext(UserContext)
+const {currentUser} = useContext(UserContext)
 const [voteCount, setVoteCount] = useState(article.votes);
 const [voteError, setVoteError] = useState("")
-const [commentError, setCommentError] = useState("")
+const [commentError] = useState("")
 
+const stringDate = new Date(article.created_at)
+
+console.log(article.created_at)
 
 useEffect(() => {
     setVoteCount(article.votes)
 },[article.votes])
-
-
 
 
 const upVote = (event) => {
@@ -51,12 +52,18 @@ const downVote = (event) => {
 })
 }
 
-
+if(articleIDError) {
+    return (<>
+        <p>Currently logged in as: {currentUser.username} </p>
+        <p className="error-message-topic">{articleIDError}</p>
+    </>)
+} else
     return (<>
         <p>Currently logged in as: {currentUser.username} </p>
         <p className="error-message-topic">{articleIDError}</p>
         <div className="article-card">
         <h3>ID# {article.article_id} - {article.title}</h3>
+        <p>Date Posted: {stringDate.toGMTString()}</p>
         <p>Topic: {article.topic}</p>
         <p>Author: {article.author}</p>
         <p className="article-body"> {article.body}</p>

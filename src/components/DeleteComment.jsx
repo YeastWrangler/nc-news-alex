@@ -29,7 +29,7 @@ const DeleteComment = ({author, comment_id, setCommentDelete, errorMessage, setE
     )} else {
         return (
         <div>
-            <button value={comment_id} onClick={handleDeleteClick}>Delete Your Comment</button>
+            <button  value={comment_id} onClick={handleDeleteClick}>Delete Your Comment</button>
         </div>
         )}
 }
