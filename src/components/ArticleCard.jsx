@@ -5,6 +5,8 @@ import {Link} from "react-router-dom"
 
 const ArticleCard = ({article}) => {
 
+    const stringDate = new Date(article.created_at)
+
     const [voteCount, setVoteCount] = useState(article.votes);
     const [voteError, setVoteError] = useState("")
 
@@ -29,6 +31,7 @@ const ArticleCard = ({article}) => {
 
         <div className="article-card">
             <h3>ID# {article.article_id} - {article.title}</h3>
+            <p>Date Posted: {stringDate.toGMTString()}</p>
             <p>Topic: {article.topic.charAt(0).toUpperCase() + article.topic.slice(1)}</p>
             <p>Author: {article.author}</p>
             <p className="article-body"> {article.body}</p>

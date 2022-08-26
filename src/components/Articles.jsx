@@ -8,27 +8,29 @@ import ArticleCard from './ArticleCard'
 const Articles = ({topic, sortQuery, setSortQuery, toggle}) => {
     
     const [articleList, setArticleList] = useState([])
-    
-
-   
-
+    const [topicError, setTopicError] = useState("")
+console.log("changes", topic.topic, sortQuery, toggle)
     useEffect(() => {
         if(sortQuery || topic.topic){
             getArticlesSortedByTopic(topic.topic, sortQuery, toggle).then((data) => {
                     setArticleList(data.data.articles)
+                }).catch((err) => {
+                    setTopicError("Topic Not Found")
                 })
-                setSortQuery(undefined)
+                //setSortQuery(undefined)
+             
         }
         else {
         getArticles().then((data) => {
             setArticleList(data.data.articles)
         })
         }
-    }, [topic.topic, sortQuery, toggle])
+    }, [topic.topic, sortQuery, toggle, topicError])
  
 
     return (
         <div>
+            <p className="error-message-topic" >{topicError}</p>
             <ul>
             {articleList.map((article) => {
                 return <li className="article-list"key={article.article_id}>

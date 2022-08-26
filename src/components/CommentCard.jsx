@@ -7,9 +7,10 @@ import { UserContext } from '../context/user'
 const CommentCard = ({article_id}) => {
 
 const [comments, setComments] = useState([])
-const {currentUser, setCurrentUser} = useContext(UserContext)
+const {currentUser} = useContext(UserContext)
 const [commentDelete, setCommentDelete] = useState(false)
 const[errorMessage, setErrorMessage] = useState("")
+const [expanded] = useState(false);
 
     useEffect(() => {
          getCommentsByArticleID(article_id).then((data) => {
@@ -17,28 +18,35 @@ const[errorMessage, setErrorMessage] = useState("")
          setComments(data.data.comments)
          setCommentDelete(false)
       })
-    }, [article_id, commentDelete, errorMessage])
+    }, [article_id, commentDelete, errorMessage, expanded])
 
-        const [expanded, setExpanded] = useState(false);
+    
 
-        const clickHandler = () => setExpanded(!expanded);
+       
       
         return (
-          <ul className="collapsible" onClick={clickHandler}> Click to View Comments
+          <ul className="collapsible" > 
             {comments.map((comment) => { 
+                const stringDate = new Date(comment.created_at)
                 if(comment.author === currentUser.username) {
-                return <li  className="expanded" key={comment.comment_id}>
+                return <> <li  className="sketchy" key={comment.comment_id}>
                     <h4>Author: {comment.author}</h4>
+                    <p> Date Posted: {stringDate.toGMTString()}</p>
                     <p> Comment: {comment.body}</p>
                     <p> Votes: {comment.votes}</p>
                     <DeleteComment author={comment.author} comment_id={comment.comment_id} setCommentDelete={setCommentDelete} errorMessage={errorMessage} setErrorMessage={setErrorMessage}/>
                     </li>
+                    <br></br>
+                    </>
                 } else {
-                    return <li  className="expanded" key={comment.comment_id}>
+                    return <> <li  className="sketchy" key={comment.comment_id}>
                     <h4>Author: {comment.author}</h4>
+                    <p> Date Posted: {stringDate.toGMTString()}</p>
                     <p> Comment: {comment.body}</p>
                     <p> Votes: {comment.votes}</p>
-                    </li> 
+                    </li>
+                    <br></br>
+                    </>
                 }
             })}</ul>)
         

@@ -19,7 +19,10 @@ export const getArticlesSorted = (sortQuery, toggle="desc") => {
 export const getArticlesSortedByTopic = (topic="coding", sortQuery, toggle) => {
     return axios.get(`https://alex-news-app-project-nc.herokuapp.com/api/articles`, {params:{sort_by: sortQuery, order: toggle, topic: topic}}).then((data) => { 
         return data
-    })
+    })//.catch((error) => {
+    //     console.log("error stuff");
+    //   return error.response.data.msg
+    // })
 }
 
 export const getArticleByArticleID = (article_id) => {
