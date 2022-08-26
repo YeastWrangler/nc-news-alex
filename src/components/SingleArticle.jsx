@@ -62,7 +62,7 @@ if(articleIDError) {
         <p>Currently logged in as: {currentUser.username} </p>
         <p className="error-message-topic">{articleIDError}</p>
         <div className="article-card">
-        <h3>ID# {article.article_id} - {article.title}</h3>
+        <h3>{article.title}</h3>
         <p>Date Posted: {stringDate.toGMTString()}</p>
         <p>Topic: {article.topic}</p>
         <p>Author: {article.author}</p>
