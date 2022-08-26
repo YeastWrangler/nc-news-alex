@@ -9,7 +9,7 @@ import {useEffect, useState, useContext} from "react"
 
 const PostComment = () => {
     
-    const {currentUser, setCurrentUser} = useContext(UserContext)
+    const {currentUser} = useContext(UserContext)
     const {article_id} = useParams()
     const [commentBody, setCommentBody] = useState()
     const [article, setArticle] = useState({})

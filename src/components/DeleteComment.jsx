@@ -1,6 +1,6 @@
 import React from 'react'
-import { UserContext } from '../context/user'
-import {useContext, useState} from "react"
+
+import { useState} from "react"
 import {deleteCommentAPI} from "../API"
 
 const DeleteComment = ({author, comment_id, setCommentDelete, errorMessage, setErrorMessage }) => {
